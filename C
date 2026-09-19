@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int opcao, palpite;
+    int numero = 42;
+
+    do {
+        printf("\n1 - Novo jogo\n2 - Creditos\n3 - Sair\n");
+        scanf_s("%d", &opcao);
+
+        if (opcao == 1) {
+            int acertou = 0;
+
+            for (int i = 1; i <= 10; i++) {
+                printf("Tentativa %d/10: ", i);
+                scanf_s("%d", &palpite);
+
+                if (palpite == numero) {
+                    printf("Acertou!\n");
+                    acertou = 1;
+                    break;
+                }
+                else if (palpite < numero) {
+                    printf("Maior!\n");
+                }
+                else {
+                    printf("Menor!\n");
+                }
+            }
+
+            if (acertou == 0)
+                printf("Fim das 10 tentativas! O numero era %d.\n", numero);
+        }
+
+        else if (opcao == 2)
+            printf("Creditos: Alexandre Salvario RA:2026108703\n");
+
+        else if (opcao == 3)
+            printf("Saindo...\n");
+
+        else
+            printf("Opcao invalida!\n");
+
+    } while (opcao != 3);
+
+    return 0;
+}
