@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+void calculadora() {
+    printf(" ___________________\n");
+    printf("|                   |\n");
+    printf("|      123.45       |\n");
+    printf("|-------------------|\n");
+    printf("|  7  |  8  |  9  | + |\n");
+    printf("|-----|-----|-----|---|\n");
+    printf("|  4  |  5  |  6  | - |\n");
+    printf("|-----|-----|-----|---|\n");
+    printf("|  1  |  2  |  3  | * |\n");
+    printf("|-----|-----|-----|---|\n");
+    printf("|  0  |  .  |  =  | / |\n");
+    printf("|___________________|\n");
+}
+
+float soma(float a, float b) {
+    return a + b;
+}
+
+float subtracao(float a, float b) {
+    return a - b;
+}
+
+float multiplicacao(float a, float b) {
+    return a * b;
+}
+
+float divisao(float a, float b) {
+    return a / b;
+}
+
+int main() {
+    float a, b;
+    int opcao;
+
+    calculadora();
+
+    printf("\nDigite dois numeros: ");
+    scanf_s("%f %f", &a, &b);
+
+    printf("\n1 - Soma\n");
+    printf("2 - Subtracao\n");
+    printf("3 - Multiplicacao\n");
+    printf("4 - Divisao\n");
+    printf("Escolha: ");
+    scanf_s("%d", &opcao);
+
+    if (opcao == 1)
+        printf("Resultado: %.2f\n", soma(a, b));
+    else if (opcao == 2)
+        printf("Resultado: %.2f\n", subtracao(a, b));
+    else if (opcao == 3)
+        printf("Resultado: %.2f\n", multiplicacao(a, b));
+    else if (opcao == 4)
+        printf("Resultado: %.2f\n", divisao(a, b));
+    else
+        printf("Opcao invalida!\n");
+
+    return 0;
+}
