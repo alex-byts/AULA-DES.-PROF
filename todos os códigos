@@ -1,0 +1,229 @@
+	int num;
+	printf("DIGITE UM NUMERO INTEIRO: ");
+	scanf_s("%d", &num);
+
+	if (num % 2==0)
+	{
+		puts("NUMERO É PAR");
+	}
+	else
+	{
+		puts("O NUMERO É IMPAR");
+	}
+	if (num < 0)
+	{
+		puts("O NUMERO É NEGATIVO");
+	}
+	else
+	{
+		puts("O NUMERO É POSITIVO");
+	}
+
+-------------------------------------------------------
+
+	int num = 7;
+	printf("ADIVINHE O NUMERO DE 0 ATE 10: ");
+	scanf_s("%d", &num);
+
+	if (num >= 1 || num <= 10)
+	{
+		if (num == 7)
+		{
+			puts("ACERTOU!!!");
+		}
+		else
+		{
+			puts("TENTE DE NOVO");
+			printf("ADIVINHE O NUMERO DE 0 ATE 10: ");
+			scanf_s("%d", &num);
+
+			if (num == 7)
+			{
+				puts("ACERTOU!!!");
+			}
+			else
+			{
+				puts("TENTE DE NOVO");
+				printf("ADIVINHE O NUMERO DE 0 ATE 10: ");
+				scanf_s("%d", &num);
+
+				if (num == 7)
+				{
+					puts("ACERTOU!!!");
+				}
+				else
+				{
+					printf("ACABOU AS TENTATIVAS");
+				}
+			}
+		}
+	}
+	else {
+		puts("numero invalido");
+	}
+
+-------------------------------------------
+
+#include <stdio.h>
+int main(void)
+{
+	int a, b, c;
+
+	printf("digite o valor do lado a do triangulo: ");
+	scanf_s("%d" , &a);
+
+	printf("digite o valor do lado b do triangulo: ");
+	scanf_s("%d", &b);
+
+	printf("digite o valor do lado c do triangulo: ");
+	scanf_s("%d", &c);
+
+	if (a + b > c && b + c > a && c + a > b )
+	{
+		if (a == b && b == c)
+		{
+			puts("Isso é um trinagulo equilatero");
+		}
+		else
+		{
+			if (a == b || a == c || b == c)
+			{
+				puts("Isso é um triangulo isosceles");
+			}
+			else
+			{
+				puts("Isso e um triangulo escaleno");
+			}
+		}
+	}
+	else
+	{
+		puts("Não é um triangulo");
+	}
+}
+
+----------------------------------------
+
+#include <stdio.h>
+
+int main(void)
+{
+    int comp, liga;
+    float v1, v2, res;
+
+    printf("1-RESISTENCIA\n");
+    printf("2-CAPACITANCIA\n");
+    printf("3-INDUTANCIA EQUIVALENTE\n");
+    scanf_s("%d", &comp);
+
+    printf("\n1-SERIE\n");
+    printf("2-PARALELO\n");
+    scanf_s("%d", &liga);
+
+    printf("DIGITE O PRIMEIRO VALOR: ");
+    scanf_s("%f", &v1);
+
+    printf("DIGITE O SEGUNDO VALOR: ");
+    scanf_s("%f", &v2);
+
+    switch (comp)
+    {
+    case 1:
+        switch (liga)
+        {
+        case 1:
+            res = v1 + v2;
+            break;
+
+        case 2:
+            res = (v1 * v2) / (v1 + v2);
+            break;
+
+        default:
+            printf("Numero invalido\n");
+            return 1;
+        }
+
+        printf("Resistencia equivalente = %.2f\n", res);
+        break;
+
+    case 2:
+        switch (liga)
+        {
+        case 1:
+            res = (v1 * v2) / (v1 + v2);
+            break;
+
+        case 2:
+            res = v1 + v2;
+            break;
+
+        default:
+            printf("Numero invalido\n");
+            return 1;
+        }
+
+        printf("Capacitancia equivalente = %.2f\n", res);
+        break;
+
+    case 3:
+        switch (liga)
+        {
+        case 1:
+            res = v1 + v2;
+            break;
+
+        case 2:
+            res = (v1 * v2) / (v1 + v2);
+            break;
+
+        default:
+            printf("Numero invalido\n");
+            return 1;
+        }
+
+        printf("Indutancia equivalente = %.2f\n", res);
+        break;
+
+    default:
+        printf("Valor invalido!\n");
+    }
+
+    return 0;
+}
+
+------------------------
+
+	int n;
+
+	printf("DIGITE UM NUMERO: ");
+	 scanf_s("%d", &n);
+
+	for (int i = 1; i <= n; i ++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			printf("*");
+		}
+	printf("\n");
+	}
+	return 0;
+
+-----------------------
+
+	int s = 1234, n;
+
+	do
+	{
+		printf("DIGITE A SENHA: ");
+		scanf_s("%d", &n);
+
+	} while (n != s);
+	{
+		printf("ACESSO LIBERADO");
+	}
+
+	return 0;
+
+-----------------------
+
